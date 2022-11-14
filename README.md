@@ -1,0 +1,1 @@
+A test project for a **SkillFactory** task: to convert a *Date* value to a *LocalTime* value.
