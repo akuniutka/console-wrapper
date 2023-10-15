@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>dev.akuniutka.utils</groupId>
-    <artifactId>console-io-wrappers</artifactId>
+    <artifactId>console-wrapper</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-    <name>Console Input Output Wrappers</name>
-    <description>Wrapper classes for console input, output, errors to be used in tests.</description>
+    <name>Console Input Output Wrapper</name>
+    <description>A wrapper class for console input, output, errors to be used in tests.</description>
 
     <properties>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -16,6 +16,18 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.7.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.7.2</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
