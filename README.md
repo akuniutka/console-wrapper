@@ -1,1 +1,1 @@
-Wrapper classes for console input, output, errors to be used in tests.
+A wrapper class for console input, output, errors to be used in tests.
