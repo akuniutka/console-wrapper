@@ -1,4 +1,4 @@
-package dev.akuniutka.wrappers;
+package io.github.akuniutka.wrappers;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

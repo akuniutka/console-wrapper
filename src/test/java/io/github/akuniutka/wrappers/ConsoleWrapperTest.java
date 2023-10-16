@@ -1,4 +1,4 @@
-package dev.akuniutka.wrappers;
+package io.github.akuniutka.wrappers;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
