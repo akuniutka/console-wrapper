@@ -22,10 +22,13 @@ public class ConsoleWrapper {
         System.setIn(wrapperInputStream);
         System.setOut(new PrintStream(wrapperOutputStream));
         System.setErr(new PrintStream(wrapperErrorStream));
-        runnable.run();
-        System.setIn(defaultInputStream);
-        System.setOut(defaultOutputStream);
-        System.setErr(defaultErrorStream);
+        try {
+            runnable.run();
+        } finally {
+            System.setIn(defaultInputStream);
+            System.setOut(defaultOutputStream);
+            System.setErr(defaultErrorStream);
+        }
         return this;
     }
 

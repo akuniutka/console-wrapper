@@ -3,6 +3,8 @@ package dev.akuniutka.wrappers;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.io.InputStream;
+import java.io.PrintStream;
 import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -15,6 +17,23 @@ class ConsoleWrapperTest {
         ConsoleWrapper wrapper = new ConsoleWrapper();
         Exception e = assertThrows(IllegalArgumentException.class, () -> wrapper.feed(null, () -> {}));
         assertEquals("Data for input stream cannot be null.", e.getMessage());
+    }
+
+    @Test
+    @DisplayName("Restores default streams on exception")
+    void testFeedWhenExceptionIsThrown() {
+        ConsoleWrapper wrapper = new ConsoleWrapper();
+        String inputData = "Hello, World!";
+        InputStream in = System.in;
+        PrintStream out = System.out;
+        PrintStream err = System.err;
+        Exception e = assertThrows(RuntimeException.class, () -> wrapper.feed(inputData, () -> {
+            throw new RuntimeException(inputData);
+        }));
+        assertEquals(inputData, e.getMessage());
+        assertSame(in, System.in);
+        assertSame(out, System.out);
+        assertSame(err, System.err);
     }
 
     @Test
